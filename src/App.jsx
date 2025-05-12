@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Homepage from './Pages/Homepage/Homepage';
+import CorpTraining from './Pages/CorpTraining/CorpTraining';
+import CorporateProfile from './Pages/CorporateProfile/CorporateProfile';
+import OurTeam from './Pages/OurTeam/OurTeam';
+import VissionAndMission from './Pages/VisionAndMission/VissionAndMission';
+import TrainingAndDev from './Pages/TraningAndDev/TrainingAndDev';
+import WalkIn from './Pages/WalkIn/WalkIn';
+import RecruitmentP from './Pages/Recruitment/RecruitmentP';
+import PostResume from './Pages/PostResume/PostResume';
+import Contact from './Pages/Contact/Contact';
+import Navbar from './Pages/Navbar/Navbar';
+import Footer from './Pages/Footer/Footer';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/profile" element={<CorporateProfile />} />
+        <Route path="/our-team" element={<OurTeam />} />
+        <Route path="/vision&mission" element={<CorpTraining />} />
+        <Route path="/profile" element={<VissionAndMission />} />
+        <Route path="/training&development" element={<TrainingAndDev />} />
+        <Route path="/corporate-training" element={<CorpTraining />} />
+        <Route path="/walk-in" element={<WalkIn />} />
+        <Route path="/recruitment-process" element={<RecruitmentP />} />
+        <Route path="/post-resume" element={<PostResume />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer/>
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,47 @@
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.register-btn{
+    border: 1px solid #7cbd1e;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.register-btn:hover{
+    background-color: #7cbd1e;
+    color: white;
+}
+
+.site-menu ul a{
+    font-size: 16px;
+}
+/* Add up arrow to dropdown when visible */
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    /* Position the arrow above the dropdown */
+    left: 10%;
+    transform: translateX(-50%);
+    /* Center the arrow */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    /* Create triangle shape */
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+    /* Match the dropdown background color */
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width : 1140px;
+    }
+}

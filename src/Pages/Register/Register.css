@@ -1,0 +1,5 @@
+
+.register-input:focus {
+    outline: none;
+    border: 1px solid #7cbd1e !important; 
+}

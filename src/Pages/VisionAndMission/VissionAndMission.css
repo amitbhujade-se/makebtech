@@ -1,0 +1,30 @@
+.unit-3 {
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.unit-3::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #13e3a5;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+    z-index: 0;
+}
+
+.unit-3:hover::before {
+    transform: scaleX(1);
+}
+
+.unit-3 .unit-3-text {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease-in-out;
+}
+
+.unit-3:hover .unit-3-text {
+    color: #fff;
+}

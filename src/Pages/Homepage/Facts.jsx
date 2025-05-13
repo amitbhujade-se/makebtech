@@ -30,11 +30,12 @@ export default function Facts() {
     <div className="py-12 px-4 md:px-16 bg-white text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-12">Facts</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 ">
         {facts.map((fact, idx) => (
           <div
             key={idx}
-            className="relative bg-white border shadow-lg rounded-xl p-3 md:p-4 transform transition duration-300 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl"
+            className="relative bg-white border shadow-lg rounded-xl p-3 md:p-4 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl"
+            style={{transition: "all 0.3s ease-in-out"}}
             data-aos="fade-up"
             data-aos-delay={idx * 100}
           >

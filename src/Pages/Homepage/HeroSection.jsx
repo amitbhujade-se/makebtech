@@ -34,7 +34,7 @@ const Slider = () => {
       />
 
       {/* Heading */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
         <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold animate-blink drop-shadow-xl uppercase tracking-widest">
           {headings[current]}
         </h1>

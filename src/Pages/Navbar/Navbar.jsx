@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Navbar.css";
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
+    const [isFixed, setIsFixed] = useState(false); // Track if navbar should be fixed
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -41,10 +42,30 @@ const Navbar = () => {
         { label: "CONTACT", href: "/contact" },
     ];
 
+    // Handle scroll to fix navbar
+    useEffect(() => {
+        const handleScroll = () => {
+            const topBarHeight = document.querySelector('.site-navbar-top')?.offsetHeight || 0;
+            const scrollPosition = window.scrollY;
+            // Fix navbar after scrolling past the top bar
+            if (scrollPosition > topBarHeight) {
+                setIsFixed(true);
+            } else {
+                setIsFixed(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
     return (
-        <div className="site-navbar-wrap bg-white shadow-md">
+        <div className="site-navbar-top site-navbar-wrap bg-white shadow-md">
             {/* Top Bar */}
-            <div className="site-navbar-top flex justify-center">
+            <div className="flex justify-center">
                 <div className="container py-2">
                     <div className="flex flex-wrap items-center">
                         <div className="w-full md:w-1/2 lg:w-2/12">
@@ -83,7 +104,10 @@ const Navbar = () => {
             </div>
 
             {/* Main Navbar */}
-            <div className="site-navbar shadow-lg flex justify-center" style={{ background: "#213653" }}>
+            <div className={`site-navbar shadow-lg flex justify-center ${isFixed ? 'fixed top-0 left-0 w-full z-50 bg-opacity-90 backdrop-blur-sm' : ''}`}
+                style={{
+                    background: "#213653",
+                  }}>
                 <div className="container">
                     <div className="flex flex-wrap items-center justify-between">
                         <div className="w-fit lg:w-8/12">

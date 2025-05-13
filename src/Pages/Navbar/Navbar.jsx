@@ -172,6 +172,7 @@ const Navbar = () => {
                                                     <a
                                                         href={child.href}
                                                         className="text-gray-600 hover:bg-blue-900 hover:text-white block px-4 py-2 font-medium text-md"
+                                                        style={{ transition: "all 0.2s ease-in-out" }}
                                                     >
                                                         {child.label}
                                                     </a>

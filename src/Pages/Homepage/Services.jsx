@@ -46,17 +46,17 @@ const OurServices = () => {
   }, []);
 
   return (
-    <div className="bg-white py-12 px-6 md:px-20 text-gray-900 font-Serif">
-      <h2 className="text-4xl font-semibold text-center mb-12 font-Serif">Our Services</h2>
+    <div className="bg-white py-12 px-6 md:px-20 text-gray-900 ">
+      <h2 className="text-4xl font-semibold text-center mb-12 ">Our Services</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 font-Serif">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 ">
         {services.slice(0, 3).map((service, idx) => (
           <div
             key={idx}
-            className="border p-6 rounded-md text-left shadow-xl bg-white transition-all transform hover:scale-[1.05] hover:shadow-2xl hover:bg-green-100 duration-300 ease-in-out font-serif"
+            className="border p-6 rounded-md text-left shadow-xl bg-white transition-all transform hover:scale-[1.05] hover:shadow-2xl hover:bg-green-100 duration-300 ease-in-out "
           >
-            <div className="flex items-center mb-4 font-serif ">
-              <div className="hexagon w-20 h-20 flex items-center justify-center text-4xl text-green-600 mr-4 border-4 border-green-600 font-serif">
+            <div className="flex items-center mb-4  ">
+              <div className="hexagon w-20 h-20 flex items-center justify-center text-4xl text-green-600 mr-4 border-4 border-green-600 ">
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold text-gray-800">{service.title}</h3>

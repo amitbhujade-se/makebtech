@@ -89,13 +89,13 @@ const Navbar = () => {
                         <div className="w-fit lg:w-8/12">
                             <nav className="site-navigation">
                                 {/* Menu Icon for Mobile */}
-                                <div className="md:hidden py-3">
+                                <div className="lg:hidden py-3">
                                     <a href="#" className="site-menu-toggle text-white" onClick={toggleMobileMenu}>
                                         <i className="fas fa-bars text-2xl"></i>
                                     </a>
                                 </div>
                                 {/* Desktop Menu */}
-                                <ul className="site-menu hidden md:flex md:items-center space-x-8">
+                                <ul className="site-menu hidden lg:flex lg:items-center space-x-8">
                                     {navItems.map((item, index) => (
                                         <li key={index} className="relative group">
                                             {item.children ? (
@@ -149,7 +149,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Sidebar Menu */}
-            <div className={`mobile - sidebar fixed top-0 right-0 h-full bg-white z-50 transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 md:hidden w-64`}>
+            <div className={`mobile - sidebar fixed top-0 right-0 h-full bg-white z-50 transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 lg:hidden w-64`}>
                 <div className="mobile-sidebar-header p-4 flex justify-end border-b">
                     <span className="fas fa-times text-2xl text-black cursor-pointer" onClick={toggleMobileMenu}></span>
                 </div>
@@ -193,7 +193,7 @@ const Navbar = () => {
             {/* Overlay for Mobile Menu */}
             {isMobileMenuOpen && (
                 <div
-                    className="fixed inset-0 z-40 md:hidden overlay"
+                    className="fixed inset-0 z-40 lg:hidden overlay"
                     style={{
                         backgroundSize: "cover",
                         backgroundPosition: "center",
